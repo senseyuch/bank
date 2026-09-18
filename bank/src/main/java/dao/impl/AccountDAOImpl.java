@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class AccountDAOImpl implements AccountDAO {
-    private static final String URL = "jdbc:mysql://localhost:3306/cicc_bank_db";
+    private static final String URL = "jdbc:mysql://localhost:3306/ciicc_db_b11bank";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "";
 
@@ -48,6 +48,9 @@ public class AccountDAOImpl implements AccountDAO {
             }
         }
     }
+
+
+
 
     @Override
     public Optional<Account> findByAccountNumber(String accountNumber) throws SQLException {
@@ -108,5 +111,19 @@ public class AccountDAOImpl implements AccountDAO {
         }
     }
 
+    @Override
+    public void updateBalance(Connection conn, String accountNumber, BigDecimal balance) throws SQLException {
+        String query = "UPDATE accounts SET balance = ? WHERE account_number = ?";
+        try (PreparedStatement preparedStatement = conn.prepareStatement(query)) {
+
+            preparedStatement.setBigDecimal(1, balance);
+            preparedStatement.setString(2, accountNumber);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected == 0) {
+                throw new SQLException("Updating balance failed, no account found with account number: " + accountNumber);
+            }
+        }
+    }
 
 }

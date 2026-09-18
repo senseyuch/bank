@@ -11,7 +11,7 @@ import java.util.List;
 
 public class TransactionDAOImpl implements TransactionDAO {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/cicc_bank_db";
+    private static final String URL = "jdbc:mysql://localhost:3306/ciicc_db_b11bank";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "";
 
