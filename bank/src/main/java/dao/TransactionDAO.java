@@ -8,6 +8,8 @@ import java.util.List;
 public interface TransactionDAO {
 
     void save(Transaction transaction) throws SQLException;
+
     List<Transaction> findByAccountNumber(String accountNumber) throws SQLException;
+
     List<Transaction> findRecentTransactions(String accountNumber, int limit) throws SQLException;
 }

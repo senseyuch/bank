@@ -17,20 +17,7 @@ public class AccountDAOImpl implements AccountDAO {
     private Connection connection() throws SQLException {
         return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
-//private static final Logger LOGGER = Logger.getLogger(AccountDAOImpl.class.getName());
-//    private static final String SQL_INSERT =
-//            "INSERT INTO accounts (account_number, account_name, balance) VALUES (?, ?, ?)";
-//
-//    private static final String SQL_FIND_BY_NUMBER =
-//            "SELECT account_id, account_number, account_name, balance, created_at, updated_at " +
-//                    "FROM accounts WHERE account_number = ?";
-//
-//    private static final String SQL_FIND_ALL =
-//            "SELECT account_id, account_number, account_name, balance, created_at, updated_at " +
-//                    "FROM accounts ORDER BY created_at ASC";
-//
-//    private static final String SQL_UPDATE_BALANCE =
-//            "UPDATE accounts SET balance = ? WHERE account_number = ?";
+
 
     @Override
     public void createAccount(Account account) throws SQLException {
@@ -48,8 +35,6 @@ public class AccountDAOImpl implements AccountDAO {
             }
         }
     }
-
-
 
 
     @Override

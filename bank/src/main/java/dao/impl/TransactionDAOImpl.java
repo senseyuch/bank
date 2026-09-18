@@ -50,8 +50,8 @@ public class TransactionDAOImpl implements TransactionDAO {
                 "ORDER BY created_at DESC";
         List<Transaction> transactions = new ArrayList<>();
 
-        try (Connection conn = connection();){
-             PreparedStatement prepareStatement = conn.prepareStatement(query);
+        try (Connection conn = connection();) {
+            PreparedStatement prepareStatement = conn.prepareStatement(query);
 
             prepareStatement.setString(1, accountNumber);
 
@@ -61,10 +61,9 @@ public class TransactionDAOImpl implements TransactionDAO {
                 }
             }
             return transactions;
-      
-            
 
-    }
+
+        }
     }
 
     @Override
