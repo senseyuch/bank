@@ -139,9 +139,9 @@ public class BankMenu {
         recordTransaction(account.getAccountNumber(), TransactionType.DEPOSIT, amount, newBalance, "Cash deposit");
 
 
-        System.out.println("Previous Balance: " + account.getBalance());
+        System.out.println("Previous Balance: ₽" + account.getBalance());
         System.out.println("Deposit Amount: ₽ " + amount);
-        System.out.println("New Balance: " + newBalance);
+        System.out.println("New Balance: ₽" + newBalance);
         System.out.println();
         System.out.println("Deposit Successfully !");
     }
